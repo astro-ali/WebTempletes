@@ -1,0 +1,104 @@
+.footer-background {
+    background-color: $darkBlue;
+}
+
+.footer {
+    color: $white;
+    padding: 2.5rem;
+    
+    @include breakpoint-down(medium){
+        text-align: center;
+    }
+
+    @include breakpoint-up(large){
+        // padding-bottom: 0rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 2fr;
+        justify-items: start;
+    }
+
+    a {
+        color: $white;
+
+        @include breakpoint-up(large){
+            font-size: 0.875rem;
+        }
+        
+    }
+    &__logo {
+        margin-bottom: 1.875rem;
+        display: inline-block;
+
+        @include breakpoint-up(large){
+            margin-top: 0.875rem;
+            margin-bottom: 1.75rem;
+        }
+    }
+
+    &__social {
+        margin-bottom: 1.875rem;
+        a {
+            @include breakpoint-up(large){
+                &:hover svg path {
+                    fill: $limeGreen;
+                }
+            }
+        }
+
+        a:not(:last-child) {
+            display: inline-block;
+            margin-right: 0.625rem;
+        }
+
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint-up(large){
+            align-items: start;
+            justify-self: center;
+
+            a:hover {
+                color: $limeGreen;
+            }
+        }
+
+        &col2 {
+            margin-bottom: 1.875rem;
+        }
+
+        a {
+            line-height: 2.25;
+        }
+    }
+
+    &__cta {
+        margin-top: 1.875rem;
+
+        @include breakpoint-up(large){
+            justify-self: end;
+            text-align: right;
+            margin-top: 0rem;
+        }
+        a.button {
+            margin-bottom: 1.875rem;
+            display: inline-block;
+
+            @include breakpoint-up(large){
+                margin-bottom: 2.875rem;
+            }
+        }
+        
+    }
+
+    &__copyright {
+        color: $grayishBlue;
+
+        @include breakpoint-up(large){
+            font-size: 0.875rem;
+        }
+    }
+}
